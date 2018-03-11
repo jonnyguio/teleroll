@@ -11,7 +11,7 @@
 telegramAPI = require 'telegram.api'
 requests = require 'requests'
 
-bot = telegramAPI.new("413442050:AAE78Y9mKnoaFUR5HV8fLgibaYsm3Wit-dU", "url_query")
+bot = telegramAPI.new(os.getenv("TELEROLL_TOKEN"), "url_query")
 
 random_org_url = "https://api.random.org/json-rpc/1/invoke"
 update_file_path = "./lastUpdate.txt"
