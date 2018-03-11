@@ -11,9 +11,10 @@
 telegramAPI = require 'telegram.api'
 requests = require 'requests'
 
-bot = telegramAPI.new("413442050:AAE78Y9mKnoaFUR5HV8fLgibaYsm3Wit-dU", "url_query")
+bot = telegramAPI.new(os.getenv("TELEROLL_TOKEN"), "url_query")
 
 random_org_url = "https://api.random.org/json-rpc/1/invoke"
+random_org_token = os.getenv("RANDOM_ORG_TOKEN")
 update_file_path = "./lastUpdate.txt"
 
 function urlencode(str)
@@ -53,7 +54,7 @@ if updates ~= nil then
                     ["jsonrpc"] = "2.0", 
                     ["method"] = "generateIntegers", 
                     ["params"] = {
-                        ["apiKey"] = "fab223d8-8dd9-40b3-9405-9d1dca6da05e",
+                        ["apiKey"] = random_org_token,
                         ["n"] = times,
                         ["min"] = 1, 
                         ["max"] = dice, 
